@@ -5,20 +5,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDateTime;
+import javax.persistence.Table;
+import java.sql.Timestamp;
 
 @Entity
+@Table(name = "testtables")
 public class TestTable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private LocalDateTime created_at;
+    @Column(name = "created_at")
+    private Timestamp createdAt;
 
-    @Column(nullable = false)
-    private LocalDateTime updated_at;
+    @Column(name = "updated_at")
+    private Timestamp updatedAt;
+
+    @Column(name = "name", nullable = false, length = 255)
+    private String name;
 
     // Getters and Setters
 
@@ -30,19 +35,27 @@ public class TestTable {
         this.id = id;
     }
 
-    public LocalDateTime getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(LocalDateTime created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public LocalDateTime getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(LocalDateTime updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
