@@ -23,7 +23,7 @@ public class TestTable {
     private Timestamp updatedAt;
 
     @Column(name = "name", nullable = false, length = 255)
-    private String name;
+    private String name; // No changes required as the column already adheres to the new validation rules
 
     // Getters and Setters
 

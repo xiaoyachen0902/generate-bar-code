@@ -1,0 +1,10 @@
+-- Start of new migration file content
+
+CREATE TABLE IF NOT EXISTS testtables (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    name VARCHAR(255) NOT NULL
+);
+
+-- End of new migration file content
